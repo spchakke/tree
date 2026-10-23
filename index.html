@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arbor — Grow something that outlives you</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a href="#" class="brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 22V11M12 14l-4-4M12 12l4-5M12 17l3-3"/>
+      </svg>
+      Arbor
+    </a>
+    <nav>
+      <a href="#story">Story</a>
+      <a href="#how">How it works</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a href="#plant" class="btn btn-small">Plant a tree</a>
+  </header>
+
+  <main>
+    <section id="grow" class="grow">
+      <div class="stage">
+        <canvas id="tree" role="img" aria-label="An ink-drawn tree growing from sapling to full canopy"></canvas>
+
+        <div class="chapters" id="story">
+          <article class="chapter active">
+            <p class="eyebrow">Arbor · Planting &amp; stewardship</p>
+            <h1>Grow something<br><em>that outlives you.</em></h1>
+            <p class="lede">Every forest begins with a single, quiet decision. Watch it grow.</p>
+          </article>
+
+          <article class="chapter">
+            <p class="eyebrow">Chapter I · Reaching</p>
+            <h2>First, it learns<br><em>the shape of the sky.</em></h2>
+            <p class="lede">For the first decade a tree spends almost everything on structure — a trunk to stand on and a few bold limbs to find the light.</p>
+          </article>
+
+          <article class="chapter">
+            <p class="eyebrow">Chapter II · Branching</p>
+            <h2>Then, it reaches<br><em>for everything at once.</em></h2>
+            <p class="lede">Limbs divide, and divide again. Each new twig is a small bet on tomorrow’s sun, and together they begin to cast real shade.</p>
+          </article>
+
+          <article class="chapter">
+            <p class="eyebrow">Chapter III · Canopy</p>
+            <h2>Finally,<br><em>it becomes a place.</em></h2>
+            <p class="lede">Shelter for birds, shade for strangers, a landmark for people not yet born. This is what you’re really planting.</p>
+            <a href="#plant" class="btn">Plant your tree</a>
+          </article>
+        </div>
+
+        <div class="swatches" role="radiogroup" aria-label="Tree colour">
+          <button type="button" class="swatch" role="radio" aria-checked="true" data-theme="green" style="--c:#2c4832" aria-label="Green" title="Green"></button>
+          <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="red" style="--c:#b8322e" aria-label="Red" title="Red"></button>
+          <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="blue" style="--c:#8cc4e0" aria-label="Light blue" title="Light blue"></button>
+          <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="orange" style="--c:#e07b25" aria-label="Orange" title="Orange"></button>
+          <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="pink" style="--c:#e483ab" aria-label="Pink" title="Pink"></button>
+          <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="autumn" style="--c:conic-gradient(#b8321a 0 33%, #e0781f 0 66%, #eab23a 0)" aria-label="Autumn" title="Autumn"></button>
+          <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="gold" style="--c:#d6b233" aria-label="Gold" title="Gold"></button>
+          <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="violet" style="--c:#7d66c8" aria-label="Jacaranda violet" title="Jacaranda"></button>
+          <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="teal" style="--c:#1f8a7e" aria-label="Teal" title="Teal"></button>
+          <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="frost" style="--c:#b3c0ca" aria-label="Frost" title="Frost"></button>
+          <button type="button" class="swatch" role="radio" aria-checked="false" data-theme="ink" style="--c:#1c1c1f" aria-label="Ink" title="Ink"></button>
+        </div>
+
+        <p class="hint" id="hint">Click the tree, or brush it with your cursor</p>
+
+        <aside class="meter">
+          <button type="button" class="replay" id="replay">↻ Grow again</button>
+          <div class="meter-label">Age</div>
+          <div class="meter-value"><span id="age">1</span><small>yrs</small></div>
+          <div class="meter-track" aria-hidden="true">
+            <div class="meter-fill" id="meterFill"></div>
+          </div>
+          <ol class="meter-steps">
+            <li class="on">Seed</li>
+            <li>Reach</li>
+            <li>Branch</li>
+            <li>Canopy</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section id="how" class="how">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2>Three small acts,<br><em>one very long story.</em></h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="num">i.</span>
+          <h3>Choose</h3>
+          <p>Pick a native species suited to the land it will live on — oak, ash, linden, or one of forty others.</p>
+        </div>
+        <div class="step">
+          <span class="num">ii.</span>
+          <h3>Plant</h3>
+          <p>Our growers set it in the ground by hand, in a restoration site near you, and send you its coordinates.</p>
+        </div>
+        <div class="step">
+          <span class="num">iii.</span>
+          <h3>Witness</h3>
+          <p>Every season you’ll receive a drawing of your tree as it is — sketched, like this one, from life.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote">
+      <blockquote>
+        “The best time to plant a tree was twenty years ago.<br><em>The second best time is now.</em>”
+      </blockquote>
+    </section>
+
+    <section id="plant" class="cta">
+      <h2>Begin with <em>one.</em></h2>
+      <p>A single tree, planted and tended for life, from $24.</p>
+      <form class="signup" onsubmit="event.preventDefault(); this.classList.add('done');">
+        <input type="email" required placeholder="you@example.com" aria-label="Email address">
+        <button type="submit" class="btn">Plant a tree</button>
+        <span class="thanks">Thank you — your seed is on its way.</span>
+      </form>
+    </section>
+  </main>
+
+  <footer id="visit" class="footer">
+    <span class="brand">Arbor</span>
+    <span>Restoration sites in 14 regions · Open to visitors every weekend</span>
+    <span>© 2026</span>
+  </footer>
+
+  <script src="tree.js"></script>
+</body>
+</html>
